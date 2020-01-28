@@ -6,14 +6,14 @@ class Counter extends Component {
     tags: []
   };
 
-  constructor() {
-    super();
-    this.handleIncrement = this.handleIncrement.bind(this); // returns a new function
-  }
+  // constructor() {
+  //   super();
+  //   this.handleIncrement = this.handleIncrement.bind(this);
 
-  handleIncrement() {
+  // convert function into arrow function (arrow functions do not rebind 'this' keyword - they inherit it)
+  handleIncrement = () => {
     console.log('Increment Clicked', this);
-  }
+  };
 
   render() {
     return (
