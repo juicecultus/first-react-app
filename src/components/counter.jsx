@@ -2,17 +2,11 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
   state = {
-    count: 0,
-    tags: []
+    count: 0
   };
 
-  // constructor() {
-  //   super();
-  //   this.handleIncrement = this.handleIncrement.bind(this);
-
-  // convert function into arrow function (arrow functions do not rebind 'this' keyword - they inherit it)
   handleIncrement = () => {
-    console.log('Increment Clicked', this);
+    this.setState({ count: this.state.count + 1 });
   };
 
   render() {
@@ -20,7 +14,7 @@ class Counter extends Component {
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement()}
+          onClick={this.handleIncrement}
           className='btn btn-secondary btn-sm'
         >
           Increment
